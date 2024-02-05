@@ -1,0 +1,4 @@
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema ChatCompletionToolChoiceOption is a polymorphic type but does not define a discriminator. This will result in a serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema ChatCompletionRequestMessageContentPart is a polymorphic type but does not define a discriminator. This will result in a serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema ChatCompletionRequestMessage is a polymorphic type but does not define a discriminator. This will result in a serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ChatCompletionRequestMessageContentPartImage/properties/image_url/properties/url - The format uri is not supported by Kiota and the string type will be used.
