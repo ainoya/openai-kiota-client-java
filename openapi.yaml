@@ -5372,6 +5372,8 @@ components:
           }
 
     ChatCompletionRequestMessageContentPart:
+      discriminator:
+        propertyName: type
       oneOf:
         - $ref: "#/components/schemas/ChatCompletionRequestMessageContentPartText"
         - $ref: "#/components/schemas/ChatCompletionRequestMessageContentPartImage"
@@ -5419,6 +5421,8 @@ components:
         - text
 
     ChatCompletionRequestMessage:
+      discriminator:
+        propertyName: role
       oneOf:
         - $ref: "#/components/schemas/ChatCompletionRequestSystemMessage"
         - $ref: "#/components/schemas/ChatCompletionRequestUserMessage"
@@ -5453,9 +5457,9 @@ components:
           description: |
             The contents of the user message.
           oneOf:
-            - type: string
-              description: The text contents of the message.
-              title: Text content
+#            - type: string
+#              description: The text contents of the message.
+#              title: Text content
             - type: array
               description: An array of content parts with a defined type, each can be of type `text` or `image_url` when passing in images. You can pass multiple images by adding multiple `image_url` content parts. Image input is only supported when using the `gpt-4-visual-preview` model.
               title: Array of content parts
@@ -5616,11 +5620,11 @@ components:
 
         `none` is the default when no functions are present. `auto` is the default if functions are present.
       oneOf:
-        - type: string
-          description: >
-            `none` means the model will not call a function and instead generates a message.
-            `auto` means the model can pick between generating a message or calling a function.
-          enum: [none, auto]
+#        - type: string
+#          description: >
+#            `none` means the model will not call a function and instead generates a message.
+#            `auto` means the model can pick between generating a message or calling a function.
+#          enum: [none, auto]
         - $ref: "#/components/schemas/ChatCompletionNamedToolChoice"
       x-oaiExpandable: true
 
@@ -6705,7 +6709,7 @@ components:
           example: "The quick brown fox jumped over the lazy dog"
           oneOf:
             - type: string
-              title: stringCreateEmbeddingRequest
+              title: stringCreateEmbeddingRequestInput
               description: The string that will be turned into an embedding.
               default: ""
               example: "This is a test."
